@@ -25,19 +25,23 @@ app.post('/generate-question-paper', (req,res)=>{
 
     let questionPaper = [];
 
-  // Check if enough questions are available for each difficulty level
-  if (easyQuestions.length >= numEasy && mediumQuestions.length >= numMedium && hardQuestions.length >= numHard) {
-    questionPaper = [
-      ...getRandomQuestions(easyQuestions, numEasy),
-      ...getRandomQuestions(mediumQuestions, numMedium),
-      ...getRandomQuestions(hardQuestions, numHard)
-    ];
-  } else {
-    return res.status(400).json({ error: 'Not enough questions available for the specified distribution.' });
-  }
+    const getTotalMarks = (arr) => arr.reduce((acc, curr) => acc + curr.marks, 0);
 
+    while (true) {
+        const selectedEasy = getRandomQuestions(easyQuestions, numEasy);
+        const selectedMedium = getRandomQuestions(mediumQuestions, numMedium);
+        const selectedHard = getRandomQuestions(hardQuestions, numHard);
 
- res.json({questionPaper});
+        questionPaper = [...selectedEasy, ...selectedMedium, ...selectedHard];
+
+        const totalMarksSelected = getTotalMarks(questionPaper);
+
+        if (totalMarksSelected === totalMarks) {
+            break;
+        }
+    }
+
+   res.json({questionPaper});
 })
 
 

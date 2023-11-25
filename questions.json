@@ -1,87 +1,66 @@
 [
     {
-      "question": "What is the speed of light?",
-      "subject": "Physics",
-      "topic": "Waves",
-      "difficulty": "Easy",
-      "marks": 5
+        "question": "What is the speed of light?",
+        "subject": "Physics",
+        "topic": "Waves",
+        "difficulty": "Easy",
+        "marks": 5
     },
     {
-      "question": "Solve for x: 2x + 5 = 15",
-      "subject": "Mathematics",
-      "topic": "Algebra",
-      "difficulty": "Medium",
-      "marks": 10
+        "question": "Solve for x: 2x + 5 = 15",
+        "subject": "Mathematics",
+        "topic": "Algebra",
+        "difficulty": "Medium",
+        "marks": 10
     },
     {
-      "question": "How does photosynthesis occur?",
-      "subject": "Biology",
-      "topic": "Cellular Processes",
-      "difficulty": "Hard",
-      "marks": 15
+        "question": "How does photosynthesis occur?",
+        "subject": "Biology",
+        "topic": "Cellular Processes",
+        "difficulty": "Hard",
+        "marks": 15
     },
     {
-      "question": "Explain Newton's First Law of Motion.",
-      "subject": "Physics",
-      "topic": "Mechanics",
-      "difficulty": "Easy",
-      "marks": 5
+        "question": "Explain Newton's First Law of Motion.",
+        "subject": "Physics",
+        "topic": "Mechanics",
+        "difficulty": "Easy",
+        "marks": 5
     },
     {
-      "question": "Solve a quadratic equation: ax^2 + bx + c = 0",
-      "subject": "Mathematics",
-      "topic": "Algebra",
-      "difficulty": "Medium",
-      "marks": 10
+        "question": "Solve a quadratic equation: ax^2 + bx + c = 0",
+        "subject": "Mathematics",
+        "topic": "Algebra",
+        "difficulty": "Medium",
+        "marks": 10
     },
     {
-      "question": "What are the properties of chemical elements?",
-      "subject": "Chemistry",
-      "topic": "Periodic Table",
-      "difficulty": "Hard",
-      "marks": 15
+        "question": "What are the properties of chemical elements?",
+        "subject": "Chemistry",
+        "topic": "Periodic Table",
+        "difficulty": "Hard",
+        "marks": 15
     },
     {
-      "question": "Define acceleration.",
-      "subject": "Physics",
-      "topic": "Mechanics",
-      "difficulty": "Easy",
-      "marks": 5
+        "question": "Define acceleration.",
+        "subject": "Physics",
+        "topic": "Mechanics",
+        "difficulty": "Easy",
+        "marks": 5
     },
     {
-      "question": "Calculate the probability of an event.",
-      "subject": "Mathematics",
-      "topic": "Statistics",
-      "difficulty": "Medium",
-      "marks": 10
+        "question": "Calculate the probability of an event.",
+        "subject": "Mathematics",
+        "topic": "Statistics",
+        "difficulty": "Medium",
+        "marks": 10
     },
     {
-      "question": "Explain DNA replication.",
-      "subject": "Biology",
-      "topic": "Genetics",
-      "difficulty": "Hard",
-      "marks": 15
-    },
-    {
-      "question": "Define work in terms of physics.",
-      "subject": "Physics",
-      "topic": "Energy",
-      "difficulty": "Easy",
-      "marks": 5
-    },
-    {
-      "question": "Solve a trigonometric equation.",
-      "subject": "Mathematics",
-      "topic": "Trigonometry",
-      "difficulty": "Medium",
-      "marks": 10
-    },
-    {
-      "question": "Describe the properties of gases.",
-      "subject": "Chemistry",
-      "topic": "States of Matter",
-      "difficulty": "Hard",
-      "marks": 15
+        "question": "Explain DNA replication.",
+        "subject": "Biology",
+        "topic": "Genetics",
+        "difficulty": "Hard",
+        "marks": 15
     },
     {
         "question": "What is the speed of light?",
@@ -89,169 +68,133 @@
         "topic": "Waves",
         "difficulty": "Easy",
         "marks": 5
-      },
-      {
+    },
+    {
         "question": "Solve for x: 2x + 5 = 15",
         "subject": "Mathematics",
         "topic": "Algebra",
         "difficulty": "Medium",
         "marks": 10
-      },
-      {
+    },
+    {
         "question": "How does photosynthesis occur?",
         "subject": "Biology",
         "topic": "Cellular Processes",
         "difficulty": "Hard",
         "marks": 15
-      },
-      {
+    },
+    {
         "question": "Explain Newton's First Law of Motion.",
         "subject": "Physics",
         "topic": "Mechanics",
         "difficulty": "Easy",
         "marks": 5
-      },
-      {
+    },
+    {
         "question": "Solve a quadratic equation: ax^2 + bx + c = 0",
         "subject": "Mathematics",
         "topic": "Algebra",
         "difficulty": "Medium",
         "marks": 10
-      },
-      {
+    },
+    {
         "question": "What are the properties of chemical elements?",
         "subject": "Chemistry",
         "topic": "Periodic Table",
         "difficulty": "Hard",
         "marks": 15
-      },
-      {
+    },
+    {
         "question": "Define acceleration.",
         "subject": "Physics",
         "topic": "Mechanics",
         "difficulty": "Easy",
         "marks": 5
-      },
-      {
+    },
+    {
         "question": "Calculate the probability of an event.",
         "subject": "Mathematics",
         "topic": "Statistics",
         "difficulty": "Medium",
         "marks": 10
-      },
-      {
+    },
+    {
         "question": "Explain DNA replication.",
         "subject": "Biology",
         "topic": "Genetics",
         "difficulty": "Hard",
         "marks": 15
-      },
-      {
+    },
+    {
         "question": "Define work in terms of physics.",
         "subject": "Physics",
         "topic": "Energy",
         "difficulty": "Easy",
         "marks": 5
-      },
-      {
+    },
+    {
         "question": "Solve a trigonometric equation.",
         "subject": "Mathematics",
         "topic": "Trigonometry",
         "difficulty": "Medium",
         "marks": 10
-      },
-      {
+    },
+    {
         "question": "Describe the properties of gases.",
         "subject": "Chemistry",
         "topic": "States of Matter",
         "difficulty": "Hard",
         "marks": 15
-      },
-      {
-        "question": "What is the speed of light?",
+    },
+    {
+        "question": "Discuss the laws of thermodynamics.",
         "subject": "Physics",
-        "topic": "Waves",
-        "difficulty": "Easy",
-        "marks": 5
-      },
-      {
-        "question": "Solve for x: 2x + 5 = 15",
-        "subject": "Mathematics",
-        "topic": "Algebra",
-        "difficulty": "Medium",
-        "marks": 10
-      },
-      {
-        "question": "How does photosynthesis occur?",
-        "subject": "Biology",
-        "topic": "Cellular Processes",
+        "topic": "Thermodynamics",
         "difficulty": "Hard",
         "marks": 15
-      },
-      {
-        "question": "Explain Newton's First Law of Motion.",
-        "subject": "Physics",
-        "topic": "Mechanics",
-        "difficulty": "Easy",
-        "marks": 5
-      },
-      {
-        "question": "Solve a quadratic equation: ax^2 + bx + c = 0",
+    },
+    {
+        "question": "Solve a system of linear equations.",
         "subject": "Mathematics",
         "topic": "Algebra",
         "difficulty": "Medium",
         "marks": 10
-      },
-      {
-        "question": "What are the properties of chemical elements?",
+    },
+    {
+        "question": "Explain the structure of an atom.",
         "subject": "Chemistry",
-        "topic": "Periodic Table",
+        "topic": "Atomic Structure",
         "difficulty": "Hard",
         "marks": 15
-      },
-      {
-        "question": "Define acceleration.",
-        "subject": "Physics",
-        "topic": "Mechanics",
-        "difficulty": "Easy",
-        "marks": 5
-      },
-      {
-        "question": "Calculate the probability of an event.",
+    },
+    {
+        "question": "What is the principle of natural selection?",
+        "subject": "Biology",
+        "topic": "Evolution",
+        "difficulty": "Hard",
+        "marks": 15
+    },
+    {
+        "question": "Calculate the area under a curve.",
         "subject": "Mathematics",
-        "topic": "Statistics",
+        "topic": "Calculus",
         "difficulty": "Medium",
         "marks": 10
-      },
-      {
-        "question": "Explain DNA replication.",
+    },
+    {
+        "question": "Discuss the concept of electric current.",
+        "subject": "Physics",
+        "topic": "Electricity",
+        "difficulty": "Medium",
+        "marks": 10
+    },
+    {
+        "question": "Describe the structure of DNA.",
         "subject": "Biology",
         "topic": "Genetics",
         "difficulty": "Hard",
         "marks": 15
-      },
-      {
-        "question": "Define work in terms of physics.",
-        "subject": "Physics",
-        "topic": "Energy",
-        "difficulty": "Easy",
-        "marks": 5
-      },
-      {
-        "question": "Solve a trigonometric equation.",
-        "subject": "Mathematics",
-        "topic": "Trigonometry",
-        "difficulty": "Medium",
-        "marks": 10
-      },
-      {
-        "question": "Describe the properties of gases.",
-        "subject": "Chemistry",
-        "topic": "States of Matter",
-        "difficulty": "Hard",
-        "marks": 15
-      }
-  
-  
-  ]
+    }
+    
+]
   
