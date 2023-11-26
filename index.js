@@ -2,48 +2,41 @@ import express from 'express';
 import fs from 'fs';
 import bodyParser from 'body-parser';
 
-
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/generate-question-paper', (req,res)=>{
-    const questions = JSON.parse(fs.readFileSync('questions.json', 'utf-8'));
-    const {totalMarks , distribution } = req.body;
-    const totalQuestions = questions.length;
-    const numEasy = Math.round(totalQuestions*(distribution.easy/100));
-    const numMedium = Math.round(totalQuestions*(distribution.medium/100));
-    const numHard = Math.round(totalQuestions*(distribution.hard/100));
+app.post('/generate-question-paper', (req, res) => {
+  const questions = JSON.parse(fs.readFileSync('questions.json', 'utf-8'));
 
-    const easyQuestions = questions.filter(question => question.difficulty === "easy");
-    const mediumQuestions = questions.filter(question => question.difficulty === "medium");
-    const hardQuestions = questions.filter(question => question.difficulty === "hard");
+  const { totalMarks, distribution } = req.body;
+  const easyQuestions = questions.filter(question => question.difficulty === 'Easy');
+  const mediumQuestions = questions.filter(question => question.difficulty === 'Medium');
+  const hardQuestions = questions.filter(question => question.difficulty === 'Hard');
 
-    const getRandomQuestions = (arr,count)=>{
-        const shuffled = arr.sort(()=> 0.5-Math.random());
-        return shuffled.slice(0,count);
-    } 
+  console.log('Received request:', req.body); // Log the request body to understand its structure
 
-    let questionPaper = [];
+  const totalQuestions = questions.length;
+  if (distribution && typeof distribution === 'object') {
+    const numEasy = Math.round(totalQuestions * (distribution.easy / 100));
+    const numMedium = Math.round(totalQuestions * (distribution.medium / 100));
+    const numHard = Math.round(totalQuestions * (distribution.hard / 100));
 
-    const getTotalMarks = (arr) => arr.reduce((acc, curr) => acc + curr.marks, 0);
+    const getRandomQuestions = (arr, count) => {
+      const shuffled = arr.sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, count);
+    };
 
-    while (true) {
-        const selectedEasy = getRandomQuestions(easyQuestions, numEasy);
-        const selectedMedium = getRandomQuestions(mediumQuestions, numMedium);
-        const selectedHard = getRandomQuestions(hardQuestions, numHard);
+    const questionPaper = [
+      ...getRandomQuestions(easyQuestions, numEasy),
+      ...getRandomQuestions(mediumQuestions, numMedium),
+      ...getRandomQuestions(hardQuestions, numHard)
+    ];
 
-        questionPaper = [...selectedEasy, ...selectedMedium, ...selectedHard];
-
-        const totalMarksSelected = getTotalMarks(questionPaper);
-
-        if (totalMarksSelected === totalMarks) {
-            break;
-        }
-    }
-
-   res.json({questionPaper});
-})
-
+    res.json({ questionPaper });
+  } else {
+    res.status(400).json({ error: 'Invalid payload format' });
+  }
+});
 
 const PORT = 3000;
 app.listen(PORT, () => {
