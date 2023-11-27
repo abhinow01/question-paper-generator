@@ -6,38 +6,50 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post('/generate-question-paper', (req, res) => {
-  const questions = JSON.parse(fs.readFileSync('questions.json', 'utf-8'));
+    // Read questions from a JSON file or database
+const questions = JSON.parse(fs.readFileSync('questions.json', 'utf-8'));
 
-  const { totalMarks, distribution } = req.body;
-  const easyQuestions = questions.filter(question => question.difficulty === 'Easy');
-  const mediumQuestions = questions.filter(question => question.difficulty === 'Medium');
-  const hardQuestions = questions.filter(question => question.difficulty === 'Hard');
+// Extract totalMarks and distribution from the request body
+const { totalMarks, distribution } = req.body;
 
-  console.log('Received request:', req.body); // Log the request body to understand its structure
+// Calculate the weightage of each difficulty level based on marks
+const weightage = {
+  easy: 5,
+  medium: 10,
+  hard: 15,
+};
 
-  const totalQuestions = questions.length;
-  if (distribution && typeof distribution === 'object') {
-    const numEasy = Math.round(totalQuestions * (distribution.easy / 100));
-    const numMedium = Math.round(totalQuestions * (distribution.medium / 100));
-    const numHard = Math.round(totalQuestions * (distribution.hard / 100));
+const totalEasyMarks = (distribution.easy/100)*totalMarks;
+const totalMediumMarks = (distribution.medium/100)*totalMarks;
+const totalHardMarks = (distribution.hard/100)*totalMarks;
 
-    const getRandomQuestions = (arr, count) => {
-      const shuffled = arr.sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, count);
-    };
 
-    const questionPaper = [
-      ...getRandomQuestions(easyQuestions, numEasy),
-      ...getRandomQuestions(mediumQuestions, numMedium),
-      ...getRandomQuestions(hardQuestions, numHard)
-    ];
+const numEasy = Math.round(totalEasyMarks/weightage.easy);
+const numMedium = Math.round(totalMediumMarks/weightage.medium);
+const numHard = Math.round(totalHardMarks/weightage.hard);
 
-    res.json({ questionPaper });
-  } else {
-    res.status(400).json({ error: 'Invalid payload format' });
-  }
-});
 
+const easyQuestions = questions.filter(question => question.difficulty === 'Easy');
+const mediumQuestions = questions.filter(question => question.difficulty === 'Medium');
+const hardQuestions = questions.filter(question => question.difficulty === 'Hard');
+
+const getRandomQuestions = (questionPool,count) =>{
+    const shuffled = questionPool.sort(()=> 0.5 - Math.round());
+    return shuffled.slice(0,count); 
+} 
+
+const selectedEasy = getRandomQuestions(easyQuestions, numEasy);
+const selectedMedium = getRandomQuestions(mediumQuestions, numMedium);
+const selectedHard = getRandomQuestions(hardQuestions, numHard);
+
+// Combine selected questions into the question paper
+const questionPaper = [...selectedEasy, ...selectedMedium, ...selectedHard];
+
+// Send the generated question paper as a response
+res.json({ questionPaper });
+
+  });
+  
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
