@@ -29,9 +29,9 @@ This repository contains a question paper generation server built with Express.j
   }
 }
 
-## Explanatuon of logic: 
+## Explanation of logic: 
 The process behind generating a custom question paper involves several steps:
-Request Handling: Upon receiving a request, the server reads the available question database.
+Request Handling: Upon receiving a request, the server reads the available question database (questions.json in this case ).
 Distribution Calculation: It calculates the number of easy, medium, and hard questions based on the specified distribution percentages and total questions available.
 Question Filtering: Questions are filtered based on their difficulty level (easy, medium, hard).
 Random Selection: Random questions are selected from each difficulty level based on the calculated counts.
